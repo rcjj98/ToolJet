@@ -509,7 +509,7 @@ button {
       justify-content: center;
       -webkit-box-align: center;
       align-items: center;
-
+      
       .real-canvas {
         outline: 1px dotted transparent;
       }
@@ -4459,7 +4459,7 @@ input[type="text"] {
 }
 
 .onboarding-modal.dark .modal-content {
-  @extend .modal-content.home-modal-component.dark;
+  @extend .modal-content, .home-modal-component, .dark;
 }
 
 .modal-content.home-modal-component.dark {
