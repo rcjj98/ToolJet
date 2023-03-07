@@ -13,7 +13,9 @@ import { DefaultComponent } from './Components/DefaultComponent';
 import { FilePicker } from './Components/FilePicker';
 import { Modal } from './Components/Modal';
 import { CustomComponent } from './Components/CustomComponent';
+import { TransferList } from './Components/TransferList';
 import { Icon } from './Components/Icon';
+import { Ryan } from './Components/Ryan';
 import useFocus from '@/_hooks/use-focus';
 import Accordion from '@/_ui/Accordion';
 import { useTranslation } from 'react-i18next';
@@ -506,8 +508,14 @@ const GetAccordion = React.memo(
       case 'CustomComponent':
         return <CustomComponent {...restProps} />;
 
+      case 'TransferList':
+        return <TransferList {...restProps} />;
+
       case 'Icon':
         return <Icon {...restProps} />;
+
+      case 'Ryan':
+        return <Ryan {...restProps} />;
 
       case 'Form':
         return <Form {...restProps} />;
