@@ -1496,7 +1496,10 @@ export const widgets = [
         type: 'code',
         displayName: 'Option labels',
         validation: {
-          schema: { type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } },
+          schema: {
+            type: 'array',
+            element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+          },
         },
       },
     },
@@ -2009,6 +2012,152 @@ export const widgets = [
     },
   },
   {
+    name: 'OldRamcoTextbox',
+    displayName: 'OldRamcoTextbox',
+    description:
+      'Text Fields let users enter and edit text. This is customized to have icons at the start and end and error or success messages.',
+    component: 'OldRamcoTextbox',
+    others: {
+      showOnDesktop: { type: 'toggle', displayName: 'Show on desktop' },
+      showOnMobile: { type: 'toggle', displayName: 'Show on mobile' },
+    },
+    properties: {},
+    defaultSize: {
+      width: 24,
+      height: 35,
+    },
+    events: [],
+    styles: {
+      fontWeight: {
+        type: 'select',
+        displayName: 'Font Weight',
+        options: [
+          { name: 'normal', value: 'normal' },
+          { name: 'bold', value: 'bold' },
+          { name: 'lighter', value: 'lighter' },
+          { name: 'bolder', value: 'bolder' },
+        ],
+      },
+      decoration: {
+        type: 'select',
+        displayName: 'Text Decoration',
+        options: [
+          { name: 'none', value: 'none' },
+          { name: 'overline', value: 'overline' },
+          { name: 'line-through', value: 'line-through' },
+          { name: 'underline', value: 'underline' },
+          { name: 'overline underline', value: 'overline underline' },
+        ],
+      },
+      transformation: {
+        type: 'select',
+        displayName: 'Text Transformation',
+        options: [
+          { name: 'none', value: 'none' },
+          { name: 'uppercase', value: 'uppercase' },
+          { name: 'lowercase', value: 'lowercase' },
+          { name: 'capitalize', value: 'capitalize' },
+        ],
+      },
+      fontStyle: {
+        type: 'select',
+        displayName: 'Font Style',
+        options: [
+          { name: 'normal', value: 'normal' },
+          { name: 'italic', value: 'italic' },
+          { name: 'oblique', value: 'oblique' },
+        ],
+      },
+      lineHeight: { type: 'number', displayName: 'Line Height' },
+      textIndent: { type: 'number', displayName: 'Text Indent' },
+      letterSpacing: { type: 'number', displayName: 'Letter Spacing' },
+      wordSpacing: { type: 'number', displayName: 'Word Spacing' },
+      fontVariant: {
+        type: 'select',
+        displayName: 'Font Variant',
+        options: [
+          { name: 'normal', value: 'normal' },
+          { name: 'small-caps', value: 'small-caps' },
+          { name: 'initial', value: 'initial' },
+          { name: 'inherit', value: 'inherit' },
+        ],
+      },
+      textSize: {
+        type: 'number',
+        displayName: 'Text Size',
+        validation: {
+          schema: { type: 'number' },
+        },
+      },
+      backgroundColor: {
+        type: 'color',
+        displayName: 'Background Color',
+        validation: {
+          schema: { type: 'string' },
+        },
+      },
+      textColor: {
+        type: 'color',
+        displayName: 'Text Color',
+        validation: {
+          schema: { type: 'string' },
+        },
+      },
+      textAlign: {
+        type: 'alignButtons',
+        displayName: 'Align Text',
+        validation: {
+          schema: { type: 'string' },
+        },
+      },
+      visibility: {
+        type: 'toggle',
+        displayName: 'Visibility',
+        validation: {
+          schema: { type: 'boolean' },
+        },
+      },
+      disabledState: {
+        type: 'toggle',
+        displayName: 'Disable',
+        validation: {
+          schema: { type: 'boolean' },
+        },
+      },
+    },
+    exposedVariables: {
+      caption: 'OldRamcoTextbox',
+    },
+    actions: [],
+    definition: {
+      others: {
+        showOnDesktop: { value: '{{true}}' },
+        showOnMobile: { value: '{{false}}' },
+      },
+      properties: {
+        caption: { value: 'OldRamcoTextbox' },
+      },
+      events: [],
+      styles: {
+        backgroundColor: { value: '' },
+        textColor: { value: '#000000' },
+        textSize: { value: 14 },
+        textAlign: { value: 'left' },
+        fontWeight: { value: 'normal' },
+        decoration: { value: 'none' },
+        transformation: { value: 'none' },
+        fontStyle: { value: 'normal' },
+        lineHeight: { value: 1.5 },
+        textIndent: { value: 0 },
+        letterSpacing: { value: 0 },
+        wordSpacing: { value: 0 },
+        fontVariant: { value: 'normal' },
+        visibility: { value: '{{true}}' },
+        disabledState: { value: '{{false}}' },
+      },
+    },
+  },
+  {
     name: 'Image',
     displayName: 'Image',
     description: 'Display an Image',
@@ -2256,7 +2405,10 @@ export const widgets = [
         validation: {
           schema: {
             type: 'array',
-            element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }, { type: 'boolean' }] },
+            element: {
+              type: 'union',
+              schemas: [{ type: 'string' }, { type: 'number' }, { type: 'boolean' }],
+            },
           },
         },
       },
@@ -2266,7 +2418,10 @@ export const widgets = [
         validation: {
           schema: {
             type: 'array',
-            element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }, { type: 'boolean' }] },
+            element: {
+              type: 'union',
+              schemas: [{ type: 'string' }, { type: 'number' }, { type: 'boolean' }],
+            },
           },
         },
       },
@@ -2416,14 +2571,20 @@ export const widgets = [
         type: 'code',
         displayName: 'Default value',
         validation: {
-          schema: { type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } },
+          schema: {
+            type: 'array',
+            element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+          },
         },
       },
       values: {
         type: 'code',
         displayName: 'Option values',
         validation: {
-          schema: { type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } },
+          schema: {
+            type: 'array',
+            element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+          },
         },
       },
       display_values: {
@@ -2780,7 +2941,10 @@ export const widgets = [
         type: 'code',
         displayName: 'Tooltips',
         validation: {
-          schema: { type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } },
+          schema: {
+            type: 'array',
+            element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+          },
         },
       },
     },
@@ -3744,7 +3908,11 @@ export const widgets = [
             type: 'array',
             element: {
               type: 'object',
-              object: { title: { type: 'string' }, color: { type: 'string' }, textColor: { type: 'string' } },
+              object: {
+                title: { type: 'string' },
+                color: { type: 'string' },
+                textColor: { type: 'string' },
+              },
             },
           },
         },
@@ -4046,7 +4214,11 @@ export const widgets = [
         displayName: 'Secondary value label',
         validation: { schema: { type: 'string' } },
       },
-      secondaryValue: { type: 'code', displayName: 'Secondary value', validation: { schema: { type: 'string' } } },
+      secondaryValue: {
+        type: 'code',
+        displayName: 'Secondary value',
+        validation: { schema: { type: 'string' } },
+      },
       secondarySignDisplay: {
         type: 'code',
         displayName: 'Secondary sign display',
@@ -4444,7 +4616,7 @@ export const widgets = [
       },
     },
     exposedVariables: {
-      data: { value: `{{{ title: 'Hi! There', buttonText: 'Update Title'}}}` },
+      data: { value: `{{{ title: "Hi! There", buttonText: "Updated Text", queryName: "runjs1" }}}` },
     },
     definition: {
       others: {
@@ -4454,26 +4626,234 @@ export const widgets = [
       properties: {
         visible: { value: '{{true}}' },
         data: {
-          value: `{{{ title: 'Hi! There', buttonText: 'Update Title'}}}`,
+          value: `{{{ title: "Hi! There", buttonText: "Updated Text", queryName: "runjs1" }}}`,
         },
         code: {
           value: `import React from 'https://cdn.skypack.dev/react';
 import ReactDOM from 'https://cdn.skypack.dev/react-dom';
-import { Button, Container } from 'https://cdn.skypack.dev/@material-ui/core';
+import { Button, Container, Paper } from 'https://cdn.skypack.dev/@material-ui/core';
+
+
+
 const MyCustomComponent = ({data, updateData, runQuery}) => (
-  <Container>
-      <h1>{data.title}</h1>
-      <Button
-        color="primary"
-        variant="outlined"
-        onClick={() => {updateData({title: 'Hello World!!'})}}
-      >
-        {data.buttonText}
-      </Button>
+    
+    <Container>
+        <h1>{data.title}</h1>
+        <Button
+            color="primary"
+            variant="outlined"
+            onClick={() => {updateData({...data, title: 'Hello World!!'})}}>
+            {data.buttonText}
+        </Button>
+        <Button
+            color="primary"
+            variant="outlined"
+            onClick={() => {runQuery(data.queryName)}}
+        >
+            Run Query
+        </Button>
     </Container>
 );
 const ConnectedComponent = Tooljet.connectComponent(MyCustomComponent);
 ReactDOM.render(<ConnectedComponent />, document.body);`,
+          skipResolve: true,
+        },
+      },
+      events: [],
+      styles: {
+        visibility: { value: '{{true}}' },
+      },
+    },
+  },
+  {
+    name: 'TransferList',
+    displayName: 'Transfer List',
+    description: 'Transfer List',
+    component: 'TransferList',
+    properties: {
+      data: { type: 'code', displayName: 'Data', validation: { schema: { type: 'object' } } },
+      code: { type: 'code', displayName: 'Code' },
+    },
+    defaultSize: {
+      width: 20,
+      height: 450,
+    },
+    others: {
+      showOnDesktop: { type: 'toggle', displayName: 'Show on desktop' },
+      showOnMobile: { type: 'toggle', displayName: 'Show on mobile' },
+    },
+    events: {},
+    styles: {
+      visibility: {
+        type: 'toggle',
+        displayName: 'Visibility',
+        validation: { schema: { type: 'boolean' } },
+      },
+    },
+    exposedVariables: {
+      data: {
+        value: `{{{ left: [1, 2, 3, 4], right: [5, 6, 7, 8], isChecked: [2, 3] }}}`,
+      },
+    },
+    definition: {
+      others: {
+        showOnDesktop: { value: '{{true}}' },
+        showOnMobile: { value: '{{false}}' },
+      },
+      properties: {
+        visible: { value: '{{true}}' },
+        data: {
+          value: `{{{ left: [1, 2, 3, 4], right: [5, 6, 7, 8], isChecked: [2, 3] }}}`,
+        },
+        code: {
+          value: `import React from 'https://cdn.skypack.dev/react';
+                    import ReactDOM from 'https://cdn.skypack.dev/react-dom';
+                    import { Button, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Checkbox, Paper } from 'https://cdn.skypack.dev/@material-ui/core';
+                    
+                    function not(list1, list2) {
+                        return list1?.filter((elem) => list2?.indexOf(elem) === -1);
+                    }
+                      
+                    function intersection(list1, list2) {
+                        return list1?.filter((elem) => list2?.indexOf(elem) !== -1);
+                    }
+                    
+                    function isItemChecked(item, listOfCheckedItems) {
+                        if (listOfCheckedItems?.indexOf(item) !== -1) {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+
+                    const MyCustomComponent = ({data, updateData, runQuery}) => (
+                        
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">                                    
+                            <Grid item>
+                                <Paper sx={{ width: 200, height: 230, overflow: 'auto' }}>
+                                    <List dense component="div" role="list">
+                                        {data.left?.map((value) => 
+                                            <ListItem
+                                                key={value}
+                                                role="listitem"
+                                                button
+                                                onClick={() => {
+                                                    if (isItemChecked(value, data.isChecked)) {
+                                                        updateData({ ...data, isChecked: data.isChecked?.filter((elem) => elem !== value)})
+                                                    } else {
+                                                        updateData({...data, isChecked: data.isChecked?.concat(value)})
+                                                    }}
+                                                }
+                                                
+                                                >
+                                            <ListItemIcon>
+                                                <Checkbox
+                                                    checked={data.isChecked?.indexOf(value) !== -1}
+                                                    tabIndex={-1}
+                                                    disableRipple
+                                                    inputProps={{
+                                                        'aria-labelledby': \`transfer-list-item-\${value}-label\`,
+                                                    }}
+                                                />
+                                            </ListItemIcon>
+                                            <ListItemText id={\`transfer-list-item-\${value}-label\`} primary={\`List item \${value}\`} />
+                                            </ListItem>
+                                        )}
+                                    </List>
+                                </Paper>
+                            </Grid>
+                            <Grid item>
+                                <Grid container direction="column" alignItems="center">
+                                    <Button
+                                        sx={{ my: 0.5 }}
+                                        variant="outlined"
+                                        size="small"
+                                        onClick={() => updateData({...data, right: data.right?.concat(data.left), left: []})}
+                                        disabled={data.left?.length === 0}
+                                        aria-label="move all right"
+                                    >
+                                    ≫
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 0.5 }}
+                                        variant="outlined"
+                                        size="small"
+                                        onClick={() => updateData({
+                                                    ...data,
+                                                    right: data.right?.concat(intersection(data.left, data.isChecked)), 
+                                                    left: not(data.left, intersection(data.left, data.isChecked)), 
+                                                    isChecked: not(data.isChecked, intersection(data.left, data.isChecked))
+                                                })
+                                        }
+                                        disabled={data.isChecked?.length === 0}
+                                        aria-label="move selected right"
+                                    >
+                                    &gt;
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 0.5 }}
+                                        variant="outlined"
+                                        size="small"
+                                        onClick={() => updateData({   
+                                                    ...data,
+                                                    left: data.left?.concat(intersection(data.right, data.isChecked)), 
+                                                    right: not(data.right, intersection(data.right, data.isChecked)), 
+                                                    isChecked: not(data.isChecked, intersection(data.right, data.isChecked))
+                                                })
+                                        }
+                                        disabled={data.isChecked?.length === 0}
+                                        aria-label="move selected left"
+                                    >
+                                    &lt;
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 0.5 }}
+                                        variant="outlined"
+                                        size="small"
+                                        onClick={() => updateData({...data, left: data.left?.concat(data.right), right: []})}
+                                        disabled={data.right?.length === 0}
+                                        aria-label="move all left"
+                                    >
+                                    ≪
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                            <Grid item>
+                                <Paper sx={{ width: 200, height: 230, overflow: 'auto' }}>
+                                    <List dense component="div" role="list">
+                                        {data.right?.map((value) => 
+                                            <ListItem
+                                                key={value}
+                                                role="listitem"
+                                                button
+                                                onClick={() => {
+                                                    if (data.isChecked?.indexOf(value) !== -1) {
+                                                        updateData({ ...data, isChecked: data.isChecked?.filter((elem) => elem !== value)})
+                                                    } else {
+                                                        updateData({...data, isChecked: data.isChecked?.concat(value)})
+                                                    }}
+                                                }
+                                                >
+                                            <ListItemIcon>
+                                                <Checkbox
+                                                    checked={data.isChecked?.indexOf(value) !== -1}
+                                                    tabIndex={-1}
+                                                    disableRipple
+                                                    inputProps={{
+                                                        'aria-labelledby': \`transfer-list-item-\${value}-label\`,
+                                                    }}
+                                                />
+                                            </ListItemIcon>
+                                            <ListItemText id={\`transfer-list-item-\${value}-label\`} primary={\`List item \${value}\`} />
+                                            </ListItem>
+                                        )}
+                                    </List>
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    );
+                    const ConnectedComponent = Tooljet.connectComponent(MyCustomComponent);
+                    ReactDOM.render(<ConnectedComponent />, document.body);`,
           skipResolve: true,
         },
       },
@@ -4502,7 +4882,12 @@ ReactDOM.render(<ConnectedComponent />, document.body);`,
         validation: {
           schema: {
             type: 'union',
-            schemas: [{ type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } }],
+            schemas: [
+              {
+                type: 'array',
+                element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+              },
+            ],
           },
         },
       },
@@ -4512,7 +4897,12 @@ ReactDOM.render(<ConnectedComponent />, document.body);`,
         validation: {
           schema: {
             type: 'union',
-            schemas: [{ type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } }],
+            schemas: [
+              {
+                type: 'array',
+                element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+              },
+            ],
           },
         },
       },
@@ -4522,7 +4912,12 @@ ReactDOM.render(<ConnectedComponent />, document.body);`,
         validation: {
           schema: {
             type: 'union',
-            schemas: [{ type: 'array', element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] } }],
+            schemas: [
+              {
+                type: 'array',
+                element: { type: 'union', schemas: [{ type: 'string' }, { type: 'number' }] },
+              },
+            ],
           },
         },
       },
@@ -4633,7 +5028,11 @@ ReactDOM.render(<ConnectedComponent />, document.body);`,
     properties: {
       url: { type: 'code', displayName: 'File URL', validation: { schema: { type: 'string' } } },
       scale: { type: 'toggle', displayName: 'Scale page to width', validation: { schema: { type: 'boolean' } } },
-      pageControls: { type: 'toggle', displayName: 'Show page controls', validation: { schema: { type: 'boolean' } } },
+      pageControls: {
+        type: 'toggle',
+        displayName: 'Show page controls',
+        validation: { schema: { type: 'boolean' } },
+      },
       showDownloadOption: {
         type: 'toggle',
         displayName: 'Show the Download',
@@ -5174,7 +5573,7 @@ ReactDOM.render(<ConnectedComponent />, document.body);`,
         properties: ['text'],
         styles: ['fontWeight', 'textSize', 'textColor'],
         defaultValue: {
-          text: 'User Details',
+          text: '',
           fontWeight: 'bold',
           textSize: 20,
           textColor: '#000',
@@ -5341,6 +5740,64 @@ ReactDOM.render(<ConnectedComponent />, document.body);`,
         borderColor: { value: '#fff' },
         visibility: { value: '{{true}}' },
         disabledState: { value: '{{false}}' },
+      },
+    },
+  },
+  {
+    name: 'Ryan',
+    displayName: 'Ryan',
+    description: 'Ryan Icon',
+    defaultSize: {
+      width: 5,
+      height: 48,
+    },
+    component: 'Ryan',
+    others: {
+      showOnDesktop: { type: 'toggle', displayName: 'Show on desktop' },
+      showOnMobile: { type: 'toggle', displayName: 'Show on mobile' },
+    },
+    properties: {
+      icon: {
+        type: 'iconPicker',
+        displayName: 'Ryan',
+        validation: {
+          schema: { type: 'string' },
+        },
+      },
+    },
+    events: {
+      onClick: { displayName: 'On click' },
+      onHover: { displayName: 'On hover' },
+    },
+    styles: {
+      iconColor: {
+        type: 'color',
+        displayName: 'Ryan Color',
+        validation: {
+          schema: { type: 'string' },
+        },
+      },
+      visibility: {
+        type: 'toggle',
+        displayName: 'Visibility',
+        validation: {
+          schema: { type: 'boolean' },
+        },
+      },
+    },
+    exposedVariables: {},
+    definition: {
+      others: {
+        showOnDesktop: { value: '{{true}}' },
+        showOnMobile: { value: '{{false}}' },
+      },
+      properties: {
+        icon: { value: 'IconHome' },
+      },
+      events: [],
+      styles: {
+        iconColor: { value: '#000' },
+        visibility: { value: '{{true}}' },
       },
     },
   },
