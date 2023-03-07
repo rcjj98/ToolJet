@@ -1,0 +1,296 @@
+// Import colors and themes 
+@import '../../assets/scss/1-tools/tools';
+@import '../../assets/scss/2-themes/themes';
+@import "../../assets/scss/5-components/textinput";
+
+ .r-input-form-group{
+     @extend .wd-100;
+     position: relative;
+     // rvwdefault
+     &.rvwdefault{
+         display: flex;
+         align-items: center;
+         flex-direction: row;
+         .r-input-control-label{
+             margin-right: $half-s;
+             margin-bottom: 0;
+         }
+     }
+     // Label
+     .r-caption{
+         color: $grey2;
+         transition: all 0.2s;
+         margin-bottom: $half-s;
+         float: left;
+         // Is Material
+         &.material{
+             margin-bottom: 0px;
+             position: absolute;
+             top: 10px;
+             left: 8px;
+             z-index: 1;
+             padding: 0 $half-s;
+             transition: all 0.2s;
+             color: $grey4;
+             background: transparent;
+             &:before{
+                 width: 100%;
+                 height: 1px;
+                 background: $white;
+                 content: "";
+                 display: inline-block;
+                 position: absolute;
+                 z-index: -1;
+                 left: 0;
+             }
+             &.size-l{
+                 &:before{
+                     bottom: 3px;
+                 }
+             }
+             &.size-xl{
+                 &:before{
+                     bottom: 5px;
+                 }
+             }
+         }
+         &.focused{
+             color: $blue2;
+         }
+         &.error{
+             color: $red5;
+         }
+         &.success{
+             color: $successalert;
+         }
+         &.size-l{
+             font-size: $font-xs;
+             line-height: $font-m;
+         }
+         &.size-xl{
+             font-size: $font-s;
+             line-height: $font-l;
+         }
+     }
+     // Is Material
+     &.material{
+         margin-bottom: $four-s !important;
+         &.open{
+             .r-input-control-label{
+                 &.material{
+                     background: transparent;
+                     top: -10px;
+                     left: 8px;
+                     color: $grey2;
+                 }
+             }
+         }
+     }
+     // Icons
+     .r-form-icon{
+         position: absolute;
+         bottom: 0;
+         &.left{
+             left: 0px;       //Icon-left
+         }
+         &.right{
+             display: flex; 
+             right: 0px;     //Icon right
+         }
+     }
+     //Icons end
+     .r-input-form-control{
+         @extend .wd-100;
+         font-family: $font-default;
+         background: $white;
+         font-weight: $font-regular;
+         height: auto;
+         color: $grey1;
+         border: 1px solid $grey5;
+         @include border-radius($rounded-half-s);
+         //newly added
+         &.material{
+             @include border-radius($rounded-half-s);
+         }
+      
+         // Mandatory
+         &.mandatory{
+             border-left: 3px solid $primary;
+         }
+         // UI Task
+         &.uitask{
+             background-color: $accentblue70;
+         }
+         // Small Size
+         &.size-s{
+             padding: $half-s $two-s;
+             font-size: $font-xs;
+             line-height: $font-m;
+             &.icon-left{
+                 padding-left: $three-half-s;
+             }
+             &.icon-right{
+                 padding-right: $three-half-s;
+             }
+             &.icon-left-right{
+                 padding-left: $three-half-s;
+                 padding-right: $three-half-s;
+             }
+             &.icon-group-right{
+                 padding-right: calc(#{$three-half-s + $three-half-s});
+             }
+         }
+         // Medium Size
+         &.size-m{
+             padding: $one-s;
+             font-size: $font-s;
+             line-height: 1.35;
+             &.icon-left{
+                 padding-left: $four-half-s;
+             }
+             &.icon-right{
+                 padding-right: $four-half-s;
+             }
+             &.icon-left-right{
+                 padding-left: $four-half-s;
+                 padding-right: $four-half-s;
+             }
+             &.icon-group-right{
+                 padding-right: calc(#{$four-half-s + $four-half-s});
+             }
+         }
+         // Large Size
+         &.size-l{
+             padding: $one-s;
+             font-size: $font-xs;
+             line-height: $font-m;
+             &.icon-left{
+                 padding-left: $five-s;
+             }
+             &.icon-right{
+                 padding-right: $five-s;
+             }
+             &.icon-left-right{
+                 padding-left: $five-s;
+                 padding-right: $five-s;
+             }
+             &.icon-group-right{
+                 padding-right: calc(#{$five-s + $five-s});
+             }
+         }
+         // Extra Large Size
+         &.size-xl{
+             padding: $one-half-s;
+             font-size: $font-s;
+             line-height: $font-l;
+             &.icon-left{
+                 padding-left: $five-s;
+             }
+             &.icon-right{
+                 padding-right: $five-s;
+             }
+             &.icon-left-right{
+                 padding-left: $five-s;
+                 padding-right: $five-s;
+             }
+             &.icon-group-right{
+                 padding-right: calc(#{$five-s + $five-s});
+             }
+         }
+         &::placeholder{
+             color: $grey4;
+             font-size: $font-s;   //newly added
+             font-weight: $font-regular;
+         }
+         &::-moz-placeholder{
+             color: $grey4;
+             font-weight: $font-regular;
+         }
+         &:-ms-input-placeholder{
+             color: $grey4;
+             font-weight: $font-regular;
+         }
+         &::-ms-input-placeholder{
+             color: $grey4;
+             font-weight: $font-regular;
+         }
+         &:focus{
+             background: $white;
+             border-color: $primary !important;
+             outline: none;
+             @include box-shadow($box-shadow-input);
+         }
+         //Active -- newly added
+         &.active{
+             border: 1px solid $blue4 !important;
+             background-color: $white;
+             .select__control{
+                 border: 1px solid $blue4 !important;
+                 &.select__control--is-focused{
+                     border-color: transparent;
+                 }
+             }
+         }
+         &.error{
+             border: 1px solid $red5;
+             //Class for active and default inside error
+             &.error-active{
+                 background-color: $white;
+                 border: none;
+             }
+             &.error-default{
+                 background-color: $culturedwhite2;
+                 border: none;
+             }
+             &.password-error{
+                 border: 1px solid $red5 !important;
+                 background-color: $white;    //newly added
+             }
+         
+         }
+         &.success
+         {
+             border-color: $green5;
+             //Class for active and default inside error
+             &.success-active{
+                 background-color: $white;
+                 border: none;
+             }
+             &.success-default{
+                 background-color: $culturedwhite2;
+                 border: none;
+             }
+          
+         }
+         &.disabled, &:disabled{
+             pointer-events: none;
+             opacity: 0.9 !important;
+             //background: white;
+             background: $grey60 !important;      //newly added
+             & + label{
+                 color: $grey5;
+             }
+         }
+     }
+     .r-input-caption{
+         @extend .wd-100;
+         min-height: 12px;
+         margin-top: $one-s;
+         font-size: $font-xxs;
+         line-height: 1.1;
+         font-weight: $font-medium ;             //font-weight newly added
+         color: $grey5;
+         @include transition(all 0.2s);
+         &.error{
+             color: $red5;
+         }
+         &.success{
+             color: $successalert;
+         }
+     }
+ }
+ // Input with Icon Wrapper
+ .r-input-wrapper{
+     position: relative;
+     @extend .wd-100;
+ }
