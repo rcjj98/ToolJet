@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 //import DOMPurify from "dompurify";
 import { NbTextbox } from '@nebula/rui-components';
-//import { NbTextbox } from "@/_components/textbox/NbTextbox.tsx";
+//import { NbTextbox } from '@/_components/textbox/NbTextbox.tsx'; //uncomment this line to see/dragAndDrop NbTextbox in frontend
 
 // export default function OldRamcoTextbox() {
 //     return (<NbTextbox>
