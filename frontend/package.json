@@ -94,6 +94,7 @@
     "semver": "^5.7.1",
     "superstruct": "^0.15.4",
     "tinycolor2": "^1.4.2",
+    "ts-loader": "^9.4.2",
     "url-join": "^5.0.0",
     "uuid": "8.3.2",
     "xlsx": "^0.18.5",
